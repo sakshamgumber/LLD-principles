@@ -123,10 +123,44 @@ The skill includes deep, pragmatic reference guides designed for quick lookup wi
 
 ---
 
-## 🚀 Installation & Usage
+## 🚀 Installation & Quickstart
 
-### 1. In Antigravity / Agentic Environments
-Clone or copy this skill into your skills directory:
+### Option A: Install via `npx` (Fastest & Recommended)
+
+Run this one-liner in any workspace:
+
+```bash
+npx lld-first-engineering
+```
+
+The interactive installer will ask where you'd like to install:
+- **Antigravity (Workspace)**: `.gemini/antigravity/skills/lld-first-engineering`
+- **Antigravity (Global)**: `~/.gemini/antigravity/skills/lld-first-engineering`
+- **Cursor**: Sets up `.cursor/rules/lld-first-engineering.mdc` and references
+- **Claude Code**: Sets up `.claude/skills/lld-first-engineering`
+- **Generic / Standalone**: Copies to `./skills/lld-first-engineering`
+
+#### Non-Interactive / CI Flags:
+```bash
+# Install to current Antigravity workspace automatically
+npx lld-first-engineering --target antigravity -y
+
+# Install globally for all projects
+npx lld-first-engineering --target antigravity-global -y
+
+# Install Cursor rule and skill references
+npx lld-first-engineering --target cursor -y
+
+# Install to custom path
+npx lld-first-engineering --dest ./custom/path
+```
+
+---
+
+### Option B: Manual Installation
+
+#### 1. In Antigravity / Agentic Environments
+Copy this skill into your skills directory:
 
 ```bash
 # Workspace-level skill (active in this project)
@@ -138,12 +172,12 @@ mkdir -p ~/.gemini/antigravity/skills
 cp -r skills/lld-first-engineering ~/.gemini/antigravity/skills/
 ```
 
-### 2. In Cursor / Claude Code / Windsurf / Copilot
+#### 2. In Cursor / Claude Code / Windsurf / Copilot
 Add the skill's instructions to your agent rules file (e.g., `.cursorrules`, `CLAUDE.md`, or `.windsurfrules`):
 - Point the agent to `skills/lld-first-engineering/SKILL.md` as mandatory instructions for feature design and refactoring.
 - Link the `references/` directory as supporting context.
 
-### 3. Triggering the Skill
+### Triggering the Skill
 The skill automatically activates whenever you request:
 - Adding a new service, class, module, or schema
 - Refactoring existing code or restructuring packages
@@ -161,7 +195,10 @@ You can also explicitly trigger it:
 .
 ├── README.md                                       # Repository and skill documentation
 ├── CONTRIBUTING.md                                 # Guidelines for contributing
-├── LICENSE                                         # License terms
+├── LICENSE                                         # MIT License
+├── package.json                                    # npm package config and bin entry
+├── bin/
+│   └── cli.js                                      # Zero-dependency npx installer
 └── skills/
     └── lld-first-engineering/
         ├── SKILL.md                                # Core skill definition and workflow rules

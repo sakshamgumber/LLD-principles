@@ -1,0 +1,41 @@
+{
+  "name": "lld-first-engineering",
+  "version": "1.0.0",
+  "description": "Design-before-code Low-Level Design (LLD) skill installer for AI coding agents",
+  "type": "module",
+  "main": "bin/cli.js",
+  "bin": {
+    "lld-first-engineering": "./bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "skills",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "lld",
+    "low-level-design",
+    "software-engineering",
+    "antigravity",
+    "cursor",
+    "claude-code",
+    "skills",
+    "agentic-ai",
+    "solid-principles",
+    "design-patterns"
+  ],
+  "author": "Saksham Gumber <sakshamgumber228@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sakshamgumber/LLD-principles.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sakshamgumber/LLD-principles/issues"
+  },
+  "homepage": "https://github.com/sakshamgumber/LLD-principles#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
